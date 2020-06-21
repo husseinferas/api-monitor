@@ -5,3 +5,4 @@
 .phpunit.result.cache
 /database/database.sqlite
 .env
+data.php
