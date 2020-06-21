@@ -6,3 +6,4 @@
 /database/database.sqlite
 .env
 data.php
+/builds
