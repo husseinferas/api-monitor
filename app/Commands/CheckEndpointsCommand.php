@@ -33,22 +33,37 @@ class CheckEndpointsCommand extends Command
     {
         $endpoints = DB::table('endpoints')->get();
         $output = "";
+        $total = 0;
+        $good = 0;
+        $bad = 0;
 
         foreach ($endpoints as $endpoint)
         {
+            $total++;
             try {
                 $status = Http::get($endpoint->url)->status();
             } catch (\Exception $exception) {
                 $status = 500;
             }
 
-            $emoji = ((int)$status > 204) ? "❌" : "✅";
+            if ((int)$status > 204){
+                $emoji = "❌";
+                $bad++;
+            } else {
+                $emoji = "✅";
+                $good++;
+            }
 
             $output .= "app: ".$endpoint->app . PHP_EOL .
                     "name: ".$endpoint->name . PHP_EOL .
                     "url: ".$endpoint->url . PHP_EOL .
                     "status: ". $status . $emoji . PHP_EOL . PHP_EOL;
         }
+
+        $output = "Total: " . $total . "  " . PHP_EOL .
+                $good . " ✅  ". PHP_EOL .
+                $bad . " ❌  ". PHP_EOL .
+                PHP_EOL . $output;
 
         TelegramChannel::send($output);
     }
