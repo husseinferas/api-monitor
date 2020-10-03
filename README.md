@@ -32,7 +32,7 @@ composer install
 ```bash
 cp .env.example .env
 ```
-edit `.env` file:
+* Edit `.env` file:
 ```dotenv
 CONSUMER_KEY=[your-app-key]
 DB_DATABASE=[your-sqlite-database-file-path]
@@ -41,9 +41,38 @@ DATA_SEED=[your-data-seed-file]
 TELEGRAM_TOKEN=[your-telegram-token]
 TELEGRAM_CHAT=[your-chat-id-which-chat-you-want-to-send]
 ```
+* Setup data seed:
+
+```bash
+cp data.example.php .data.php
+```
+* Edit `data.php` and add your endpoints
+```php
+return [
+    [
+        'app' => 'app-name',
+        'name' => 'endpoint-name',
+        'url' => 'endpoint-url',
+    ],
+];
+```
+
+* Setup telegram channel:
+
+  * Create a telegram bot and get your token using [BotFather](https://telegram.me/BotFather)
+  * Add your telegram bot to channel or group where you what it to send the reports (it can send it to you directly)
+  * Get the chat id using this command
+``curl https://api.telegram.org/bot$[TELEGRAM_BOT_TOKEN]/getUpdates``
+
+* Now you can test the application using this command:
+```bash
+php api-monitor check
+```
+
+**Note:** you can add this command to crontab and setup a schedule for monitoring. 
 
 
-## Contributing
+### Contributing
 
 Pull requests are welcome. For major changes.
 
