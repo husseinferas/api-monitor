@@ -6,18 +6,42 @@
 <hr>
 
 
-## <center>This is a CLI project that build with <a href="https://laravel-zero.com">Laravel Zero</a></center>
-
-API Monitor is a cli tool that check api endpoints and the 
-
+#### <center>This is a CLI project that build with <a href="https://laravel-zero.com">Laravel Zero</a></center>
 
 ### Features
 
+* Check API endpoints status.
+* Save the endpoints in sqlite database.
+* Provide a bin command so you can execute via terminal or schedule the execution in crontab. 
+* Send a report message to the supported channels ( Telegram ).
 
-## Usage
+### Usage
 
+* Clone this repo:
 
+```bash
+git clone https://github.com/husseinferas/api-monitor && cd  api-monitor
+```
 
-## License
+* Install the dependencies:
+```bash
+composer install
+```
 
-API Monitor is an open-source software licensed under the [MIT license](https://github.com/laravel-zero/laravel-zero/blob/stable/LICENSE.md).
+* Setup env and databases:
+```bash
+cp .env.example .env
+```
+edit `.env` file:
+```dotenv
+CONSUMER_KEY=[your-app-key]
+DB_DATABASE=[your-sqlite-database-file-path]
+DATA_SEED=[your-data-seed-file]
+
+TELEGRAM_TOKEN=[your-telegram-token]
+TELEGRAM_CHAT=[your-chat-id-which-chat-you-want-to-send]
+```
+
+### License
+
+API Monitor is an open-source software licensed under the [MIT license](https://github.com/husseinferas/api-monitor/blob/master/LICENSE).

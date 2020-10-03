@@ -1,6 +1,6 @@
 {
     "name": "laravel-zero/laravel-zero",
-    "description": "CLI API Monitor.",
+    "description": "A CLI program that help you check your endpoints by requesting the given servers and send a report message in any supported channels ( Telegram ).",
     "keywords": ["laravel", "php", "api", "monitor", "cli","monitoring","server"],
     "type": "project",
     "license": "MIT",
