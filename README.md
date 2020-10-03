@@ -42,6 +42,11 @@ TELEGRAM_TOKEN=[your-telegram-token]
 TELEGRAM_CHAT=[your-chat-id-which-chat-you-want-to-send]
 ```
 
+
+## Contributing
+
+Pull requests are welcome. For major changes.
+
 ### License
 
 API Monitor is an open-source software licensed under the [MIT license](https://github.com/husseinferas/api-monitor/blob/master/LICENSE).
