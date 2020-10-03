@@ -57,6 +57,11 @@ return [
 ];
 ```
 
+* Seed the database:
+```bash
+php api-monitor migrate:fresh --seed 
+```
+
 * Setup telegram channel:
 
   * Create a telegram bot and get your token using [BotFather](https://telegram.me/BotFather)
