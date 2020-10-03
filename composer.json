@@ -1,8 +1,7 @@
 {
     "name": "laravel-zero/laravel-zero",
     "description": "CLI API Monitor.",
-    "keywords": ["laravel", "php", "api", "monitor", "cli","monitoring"],
-    "homepage": "https://laravel-zero.com",
+    "keywords": ["laravel", "php", "api", "monitor", "cli","monitoring","server"],
     "type": "project",
     "license": "MIT",
     "support": {
