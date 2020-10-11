@@ -5,6 +5,7 @@ namespace App\Channels;
 
 
 use App\Interfaces\ChannelsInterface;
+use TelegramBot\Api;
 
 class TelegramChannel implements ChannelsInterface
 {
@@ -15,10 +16,8 @@ class TelegramChannel implements ChannelsInterface
     {
         $chat_id = env('TELEGRAM_CHAT');
         $token = env('TELEGRAM_TOKEN');
+        $bot = new \TelegramBot\Api\BotApi($token);
 
-        shell_exec("curl -X POST \
-             -H 'Content-Type: application/json' \
-             -d '{\"chat_id\": \"$chat_id\", \"text\": \"$message\", \"disable_notification\": true}' \
-             https://api.telegram.org/bot$token/sendMessage");
+        $bot->sendMessage($chat_id, $message, null, false, null, null, true);
     }
 }

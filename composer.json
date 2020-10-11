@@ -16,7 +16,8 @@
         "illuminate/database": "^8.0",
         "illuminate/http": "^8.0",
         "intonate/tinker-zero": "^1.1",
-        "laravel-zero/framework": "^8.0"
+        "laravel-zero/framework": "^8.0",
+        "telegram-bot/api": "^2.3"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.4",
